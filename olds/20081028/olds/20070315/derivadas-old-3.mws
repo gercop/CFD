@@ -1,0 +1,325 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 2 
+1 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 0 1 0 0 255 1 0 0 2 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle5" -1 209 "Times" 1 18 0 0 0 1 2 1 2 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle6" -1 210 "Courier" 1 12 255 0 0 1 2 1 2 2 
+1 2 0 0 0 1 }{CSTYLE "_cstyle7" -1 211 "Times" 1 12 0 0 0 1 2 2 2 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle8" -1 212 "Courier" 1 12 255 0 0 1 2 1 2 2 
+1 2 0 0 0 1 }{CSTYLE "_cstyle9" -1 213 "Times" 1 12 0 0 0 1 2 2 2 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle10" -1 214 "Times" 1 14 0 0 0 1 2 1 2 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle11" -1 215 "Courier" 1 10 0 0 255 1 2 2 2 
+2 2 2 0 0 0 1 }{CSTYLE "_cstyle12" -1 216 "Times" 0 1 0 0 0 0 0 0 0 2 
+2 2 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 
+0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 2 0 2 0 2 2 0 1 }{PSTYLE "Warni
+ng" -1 7 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 1 
+1 1 }1 1 0 0 0 0 2 0 2 0 2 2 0 1 }{PSTYLE "Maple Output" -1 11 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 
+0 2 0 2 0 2 2 0 1 }{PSTYLE "_pstyle6" -1 205 1 {CSTYLE "" -1 -1 "Times
+" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 4 2 0 2 0 2 2 0 1 }
+{PSTYLE "_pstyle7" -1 206 1 {CSTYLE "" -1 -1 "Courier" 1 12 255 0 0 1 
+2 1 2 2 1 2 1 1 1 1 }1 1 0 0 0 0 2 0 2 0 2 2 0 1 }{PSTYLE "_pstyle8" 
+-1 207 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 
+1 0 0 0 0 2 0 2 0 2 2 0 1 }{PSTYLE "_pstyle9" -1 208 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 2 0 2 0 2 2 
+0 1 }{PSTYLE "_pstyle10" -1 209 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 
+1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 2 2 0 2 0 2 2 0 1 }{PSTYLE "_pstyle11
+" -1 210 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 1 
+1 1 }1 1 0 0 0 0 2 0 2 0 2 2 0 1 }{PSTYLE "_pstyle12" -1 211 1 
+{CSTYLE "" -1 -1 "Courier" 1 12 255 0 0 1 2 1 2 2 1 2 1 1 1 1 }1 1 0 
+0 0 0 2 0 2 0 2 2 0 1 }{PSTYLE "_pstyle14" -1 213 1 {CSTYLE "" -1 -1 "
+Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 2 0 2 0 2 2 0 1 }
+{PSTYLE "_pstyle15" -1 214 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {SECT 1 {PARA 205 "" 0 "" {TEXT 209 31 "Calculo da viscosidade
+ din\342mica" }{TEXT 209 0 "" }}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 8 "restart;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 28 "mu := T^(3/2)*(1+C2)/(T+C2);" }{MPLTEXT 1 210 0 "" 
+}}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 11 "diff(mu,T);" }
+{MPLTEXT 1 210 0 "" }}}}{SECT 1 {PARA 205 "" 0 "" {TEXT 209 34 "Base p
+rofile and disturbances - 2D" }{TEXT 209 0 "" }}{EXCHG {PARA 206 "> " 
+0 "" {MPLTEXT 1 210 8 "restart;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 
+206 "> " 0 "" {MPLTEXT 1 210 46 "u_0(y) := 1/2*(U1+U2)+(U1-U2)/2*tanh(
+sigma*y);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 15 "diff(u_0(y),y);" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 23 "diff(diff(u_0(y),y),y);" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 47 "v
+_1 := A*cos(alpha*x-omega*t)*exp(-sigma*y^2); " }{MPLTEXT 1 210 0 "" }
+}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 26 "u_1 := int(diff(v_1,y)
+,x);" }{MPLTEXT 1 210 0 "" }}}}{SECT 1 {PARA 205 "" 0 "" {TEXT 209 34 
+"Base profile and Disturbances - 3D" }{TEXT 209 0 "" }}{EXCHG {PARA 
+206 "> " 0 "" {MPLTEXT 1 210 8 "restart;" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 46 "u_0(y) := 1/2*(U1+U2)+(U
+1-U2)/2*tanh(sigma*y);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 
+0 "" {MPLTEXT 1 210 15 "diff(u_0(y),y);" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 23 "diff(diff(u_0(y),y),y);
+" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 
+119 "w_1 := (A_1*cos(alpha*x-omega*t+phi)+A_2*cos(alpha*x+beta*z-omega
+*t)+A_2*cos(alpha*x-beta*z-omega*t))*exp(-sigma*y^2); " }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 120 "v_1 := (A_1
+*cos(alpha*x-omega*t+phi)+A_2*cos(alpha*x+beta*z-omega*t)+A_2*cos(alph
+a*x-beta*z-omega*t))*exp(-sigma*y^2); ;" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 46 "u_1 := -int(diff(w_1,z),
+x)-int(diff(v_1,y),x);" }{MPLTEXT 1 210 0 "" }}}{PARA 205 "" 0 "" 
+{TEXT 209 0 "" }}}{SECT 1 {PARA 205 "" 0 "" {TEXT 209 53 "Variables tr
+ansformation - Stretching for Shear Layer" }{TEXT 209 0 "" }}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 8 "restart;" }{MPLTEXT 1 210 0 "" }
+}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 44 "y:=B+1/sp*arcsinh((y_f
+/y_c-1.0)*sinh(sp*B));" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 
+0 "" {MPLTEXT 1 210 12 "diff(y,y_f);" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "diff(diff(y,y_f),y_f);" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 45 "f
+y := cy_c*(1.0+sinh(sp*(cy-B))/sinh(sp*B) );" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 12 "diff(fy,cy);" }{MPLTEXT 
+1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 21 "diff(diff(
+fy,cy),cy);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 
+211 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 8 "restart;" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 211 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 54 "y_b := 1 - log((B+1-y/h)
+/(B-1+y/h))/log((B+1)/(B-1)) ;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 
+206 "> " 0 "" {MPLTEXT 1 210 30 "dy_b := simplify(diff(y_b,y));" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 39 "d
+2y_b := simplify(diff(diff(y_b,y),y));" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "with(codegen,fortran):" 
+}{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 13 "
+fortran(y_b);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 14 "fortran(dy_b);" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 15 "fortran(d2y_b);" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 0 "" }}}}{SECT 
+1 {PARA 205 "" 0 "" {TEXT 209 34 "Esquema de quinta ordem explicito:" 
+}{TEXT 209 0 "" }}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 8 "restart
+;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 211 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 97 "Lx_1 :=(x-x_2)/(x_1-x_2)
+*(x-x_3)/(x_1-x_3)*(x-x_4)/(x_1-x_4)*(x-x_5)/(x_1-x_5)*(x-x_6)/(x_1-x_
+6);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 97 "Lx_2 :=(x-x_1)/(x_2-x_1)*(x-x_3)/(x_2-x_3)*(x-x_4)/(x_2-x_4)*(
+x-x_5)/(x_2-x_5)*(x-x_6)/(x_2-x_6);" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 97 "Lx_3 :=(x-x_1)/(x_3-x_1)*(x-x_2
+)/(x_3-x_2)*(x-x_4)/(x_3-x_4)*(x-x_5)/(x_3-x_5)*(x-x_6)/(x_3-x_6);" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 97 "L
+x_4 :=(x-x_1)/(x_4-x_1)*(x-x_2)/(x_4-x_2)*(x-x_3)/(x_4-x_3)*(x-x_5)/(x
+_4-x_5)*(x-x_6)/(x_4-x_6);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "
+> " 0 "" {MPLTEXT 1 210 97 "Lx_5 :=(x-x_1)/(x_5-x_1)*(x-x_2)/(x_5-x_2)
+*(x-x_3)/(x_5-x_3)*(x-x_4)/(x_5-x_4)*(x-x_6)/(x_5-x_6);" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 97 "Lx_6 :=(x-x_
+1)/(x_6-x_1)*(x-x_2)/(x_6-x_2)*(x-x_3)/(x_6-x_3)*(x-x_4)/(x_6-x_4)*(x-
+x_5)/(x_6-x_5);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" 
+{TEXT 211 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "dLx_1 \+
+:= diff(Lx_1,x):" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 22 "dLx_2 := diff(Lx_2,x):" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "dLx_3 := diff(Lx_3,x):" 
+}{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "
+dLx_4 := diff(Lx_4,x):" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 
+0 "" {MPLTEXT 1 210 22 "dLx_5 := diff(Lx_5,x):" }{MPLTEXT 1 210 0 "" }
+}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "dLx_6 := diff(Lx_6,x):
+" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 211 0 "" }}}
+{EXCHG {PARA 208 "> " 0 "" {MPLTEXT 1 212 22 "with(codegen,fortran):" 
+}{TEXT 213 3 "   " }{TEXT 213 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 15 "fortran(dLx_1);" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 15 "fortran(dLx_2);" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 15 "fortran(dLx_
+3);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 15 "fortran(dLx_4);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> \+
+" 0 "" {MPLTEXT 1 210 15 "fortran(dLx_5);" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 15 "fortran(dLx_6);" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 0 "" 
+}}}}{SECT 1 {PARA 205 "" 0 "" {TEXT 209 32 "Esquema de sexta ordem com
+pacto:" }{TEXT 209 0 "" }}{PARA 207 "" 0 "" {TEXT 211 0 "" }}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 8 "restart;" }{MPLTEXT 1 210 0 "" }
+}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 60 "P:=(x-x_2n)*(x-x_0)*(x
+-x_2p); diff(P,x); diff(diff(P,x),x); " }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 44 "Px_1n  :=(x_1n-x_2n)*(x_
+1n-x_0)*(x_1n-x_2p);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 
+"" {MPLTEXT 1 210 44 "Px_1p  :=(x_1p-x_2n)*(x_1p-x_0)*(x_1p-x_2p);" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 211 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 80 "dPx_1n := (x_1n-x_0)*(x_
+1n-x_2p)+(x_1n-x_2n)*(x_1n-x_2p)+(x_1n-x_2n)*(x_1n-x_0);" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 80 "dPx_0  := (x
+_0 -x_0)*(x_0 -x_2p)+(x_0 -x_2n)*(x_0 -x_2p)+(x_0 -x_2n)*(x_0 -x_0);" 
+}{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 80 "
+dPx_1p := (x_1p-x_0)*(x_1p-x_2p)+(x_1p-x_2n)*(x_1p-x_2p)+(x_1p-x_2n)*(
+x_1p-x_0);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 
+211 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 46 "d2Px_1n := 6
+.0*x_1n-2.0*x_2p-2.0*x_0-2.0*x_2n;" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 46 "d2Px_0  := 6.0*x_0 -2.0*x_2p-2.
+0*x_0-2.0*x_2n;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 46 "d2Px_1p := 6.0*x_1p-2.0*x_2p-2.0*x_0-2.0*x_2n;" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 207 "" 0 "" {TEXT 211 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 100 "DD:= 6.0+4.0*(x_1p-x_1n
+)*(dPx_1p/Px_1p-dPx_1n/Px_1n)-2.0*(x_1p-x_1n)**2*(dPx_1p/Px_1p*dPx_1n/
+Px_1n);" }{MPLTEXT 1 210 0 "" }}}{SECT 0 {PARA 209 "" 0 "" {TEXT 214 
+42 "Coeficientes para a segunda derivada (LHS)" }{TEXT 214 0 "" }}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 59 "B_1P := (-(2/(x_1n-x_1p)
+ + dPx_1n/Px_1n)*(x_1n-x_1p)^2)/DD;" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 40 "B_2P := (1-(x_1p-x_1n)*dPx_1n/P
+x_1n)/DD;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 59 "B_1N := (-(2/(x_1p-x_1n) + dPx_1p/Px_1p)*(x_1p-x_1n
+)^2)/DD;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 
+1 210 40 "B_2N := (1-(x_1n-x_1p)*dPx_1p/Px_1p)/DD;" }{MPLTEXT 1 210 0 
+"" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 78 "a_1p:=( 2*dPx_0*(B
+_1P*(2*x_0-x_1p-x_1n)+B_2N*(x_0-x_1p)*(3*x_0-2*x_1n-x_1p))+ " }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 61 "\n        d2Px_0*(x_0-x_1p)*(x
+_0-x_1n)*(B_1P+(x_0-x_1p)*B_2P) " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 
+210 34 "\n        ) / ((x_1p-x_1n)*Px_1n );" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 78 "a_1n:=( 2*dPx_0*(B_1N*(2
+*x_0-x_1p-x_1n)+B_2N*(x_0-x_1n)*(3*x_0-2*x_1p-x_1n))+ " }{MPLTEXT 1 
+210 0 "" }{MPLTEXT 1 210 61 "\n        d2Px_0*(x_0-x_1p)*(x_0-x_1n)*(B
+_1N+(x_0-x_1n)*B_2N) " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 34 "\n    \+
+    ) / ((x_1p-x_1n)*Px_1n );" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 
+206 "> " 0 "" {MPLTEXT 1 210 22 "with(codegen,fortran):" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 14 "fortran(a_1p
+);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 
+14 "fortran(a_1n);" }{MPLTEXT 1 210 0 "" }}}}{SECT 0 {PARA 209 "" 0 "
+" {TEXT 214 42 "Coeficientes para a segunda derivada (RHS)" }{TEXT 
+214 0 "" }}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 27 "A_1p := (-4.0
+*dPx_1p/Px_1p " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 29 "\n         -2
+.0*dPx_1n/Px_1n  " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 68 "\n        \+
+ +2.0*(x_1p-x_1n)*(dPx_1p/Px_1p*dPx_1n/Px_1n-d2Px_1p/Px_1p)" }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 56 "\n         +(x_1p-x_1n)^2*d2Px
+_1p/Px_1p*dPx_1n/Px_1n)/DD;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 
+"> " 0 "" {MPLTEXT 1 210 27 "A_1n := (-4.0*dPx_1n/Px_1n " }{MPLTEXT 1 
+210 0 "" }{MPLTEXT 1 210 29 "\n         -2.0*dPx_1p/Px_1p  " }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 68 "\n         +2.0*(x_1n-x_1p)*(d
+Px_1p/Px_1p*dPx_1n/Px_1n-d2Px_1n/Px_1n)" }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 56 "\n         +(x_1n-x_1p)^2*d2Px_1n/Px_1n*dPx_1p/Px_1
+p)/DD;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 39 "A_2p := (4.0*dPx_1p/Px_1p*dPx_1n/Px_1n " }{MPLTEXT 1 210 0 "" 
+}{MPLTEXT 1 210 25 "\n         -d2Px_1p/Px_1p " }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 52 "\n         -2/(x_1p-x_1n)*(dPx_1p/Px_1p-dPx_1n/Px_1
+n)" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 56 "\n         +(x_1p-x_1n)*(
+d2Px_1p/Px_1p*dPx_1n/Px_1n))/DD;" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 39 "A_2n := (4.0*dPx_1p/Px_1p*dPx_1
+n/Px_1n " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 25 "\n         -d2Px_1n
+/Px_1n " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 52 "\n         -2/(x_1n-
+x_1p)*(dPx_1n/Px_1n-dPx_1p/Px_1p)" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 
+210 56 "\n         +(x_1n-x_1p)*(d2Px_1n/Px_1n*dPx_1p/Px_1p))/DD;" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 89 "b
+_1n := (2.0*dPx_0*(1.0+A_1n*(2.0*x_0-x_1p-x_1n)+A_2n*(x_0-x_1n)*(3.0*x
+_0-2.0*x_1p-x_1n))" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 81 "\n+d2Px_0
+*(x_0-x_1p)*(1.0+A_1n*(x_0-x_1n)+A_2n*(x_0-x_1n)^2))/((x_1n-x_1p)*Px_1
+n);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 89 "b_1p := (2.0*dPx_0*(1.0+A_1p*(2.0*x_0-x_1p-x_1n)+A_2p*(x_0-x_1
+p)*(3.0*x_0-2.0*x_1n-x_1p))" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 81 "
+\n+d2Px_0*(x_0-x_1n)*(1.0+A_1p*(x_0-x_1p)+A_2p*(x_0-x_1p)^2))/((x_1p-x
+_1n)*Px_1p);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 22 "with(codegen,fortran):" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 14 "fortran(b_1n);" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 14 "f
+ortran(b_1p);" }{MPLTEXT 1 210 0 "" }}}}}{SECT 1 {PARA 205 "" 0 "" 
+{TEXT 209 47 "Aproxima\347\343o de Diferen\347as Finitas para Ordem N:
+" }{TEXT 209 0 "" }}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 8 "resta
+rt;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 13 "with(linalg):" }{MPLTEXT 1 210 0 "" }}{PARA 210 "" 1 "" {TEXT 
+215 79 "Warning, the protected names norm and trace have been redefine
+d and unprotected" }{TEXT 215 0 "" }}}{EXCHG {PARA 211 "> " 0 "" 
+{MPLTEXT 1 0 16 "st_lhs     := 7:" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 16 "center     := 0:" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 16 "derivative := 1:" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 30 "ordem      :
+= st_lhs-1: ordem;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "
+" {MPLTEXT 1 210 26 "adjust     := ordem mod 2:" }{MPLTEXT 1 210 0 "" 
+}}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 21 "A := Matrix(ordem+1):
+" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 
+34 "for ii from 1 by 1 to ordem+1 do  " }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 37 "\n  for jj from 1 by 1 to ordem+1 do  " }{MPLTEXT 
+1 210 0 "" }{MPLTEXT 1 210 70 "\n    A[ii,jj]:= (jj-round(ordem/2.0)+a
+djust-1+center)^(ii-1)/(ii-1)!; " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 
+210 10 "\n  end do;" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 8 "\nend do;
+" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 
+10 "Matrix(A);" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 23 "b := vector(ordem+1,0):" }{MPLTEXT 1 210 0 "" }}}
+{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 22 "b[derivative+1] := 1: " 
+}{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 25 "
+r := linsolve(A, b, 'r');" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 ">
+ " 0 "" {MPLTEXT 1 210 12 "df     := 0:" }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 13 "\nhh     := 0:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 
+210 13 "\nerro_1 := 0:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 13 "\nerr
+o_2 := 0:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 13 "\nerro_3 := 0:" }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 34 "\nfor j from 1 by 1 to ordem+1
+ do  " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 61 "\n  df     := df+r[j]*
+f[i+j-1-round(ordem/2.0)+adjust+center]:" }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 39 "\n  hh     := hh+A[derivative+1,j]*r[j]:" }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 85 "\n  erro_1 := erro_1+((j-round
+(ordem/2.0)+adjust-1+center)^(ordem+1)/(ordem+1)!)*r[j];" }{MPLTEXT 1 
+210 0 "" }{MPLTEXT 1 210 85 "\n  erro_2 := erro_2+((j-round(ordem/2.0)
++adjust-1+center)^(ordem+2)/(ordem+2)!)*r[j];" }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 85 "\n  erro_3 := erro_3+((j-round(ordem/2.0)+adjust-1+
+center)^(ordem+3)/(ordem+3)!)*r[j];" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 
+210 8 "\nend do:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 41 "\nerro := -
+erro_1*h^(ordem+0)*f^(ordem+1) " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 
+40 "\n        -erro_2*h^(ordem+1)*f^(ordem+2)" }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 41 "\n        -erro_3*h^(ordem+2)*f^(ordem+3):" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 11 "d
+f/hh+erro;" }{MPLTEXT 1 210 0 "" }}}}{SECT 0 {PARA 205 "" 0 "" {TEXT 
+209 57 "Aproxima\347\343o de Diferen\347as Finitas Compactas para Orde
+m N:" }{TEXT 209 0 "" }}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 8 "r
+estart;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 
+1 210 13 "with(linalg):" }{MPLTEXT 1 210 0 "" }}{PARA 7 "" 1 "" {TEXT 
+-1 80 "Warning, the protected names norm and trace have been redefined
+ and unprotected\n" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 16 "s
+t_lhs     := 3:" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 16 "st_rhs     := 5:" }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 16 "center     := 0:" }{MPLTEXT 1 
+210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 16 "derivative :
+= 1:" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 
+210 36 "ordem      := st_lhs+st_rhs: ordem;:" }{MPLTEXT 1 210 0 "" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\")" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 17 "adjust     := 0: " }{MPLTEXT 1 210 0 "" }}}{EXCHG 
+{PARA 206 "> " 0 "" {MPLTEXT 1 210 21 "A := Matrix(ordem-1):" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 43 "f
+or ii from 1 by 1 to trunc(st_lhs/2) do   " }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 39 "\n  for jj from 2 by 1 to ordem-1 do    " }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 55 "\n    A[ii,jj] := -(ii-trunc(s
+t_lhs/2)-1)^(jj)/(jj-2)!; " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 10 "
+\n  end do;" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 8 "\nend do;" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 51 "f
+or ii from trunc(st_lhs/2)+1 by 1 to st_lhs-1 do  " }{MPLTEXT 1 210 0 
+"" }{MPLTEXT 1 210 38 "\n  for jj from 2 by 1 to ordem-1 do   " }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 53 "\n    A[ii,jj] := -(ii-trunc(s
+t_lhs/2))^(jj)/(jj-2)!; " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 10 "\n \+
+ end do;" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 8 "\nend do;" }
+{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 37 "f
+or ii from st_lhs by 1 to ordem-1 do" }{MPLTEXT 1 210 0 "" }{MPLTEXT 
+1 210 17 "\n  A[ii,1] := -1:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 8 "
+\nend do:" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 37 "for ii from st_lhs by 1 to ordem-1 do" }{MPLTEXT 1 
+210 0 "" }{MPLTEXT 1 210 40 "\n  for jj from 2 by 1 to ordem-1 do     \+
+" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 65 "\n    A[ii,jj] := (ii-st_lh
+s+1-trunc(st_rhs/2)-1)^(jj-1)/(jj-1)!; " }{MPLTEXT 1 210 0 "" }
+{MPLTEXT 1 210 10 "\n  end do;" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 
+8 "\nend do;" }{MPLTEXT 1 210 0 "" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 18 "A := transpose(A);" }{MPLTEXT 1 210 0 "" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%\"AG-%'matrixG6#7)7)\"\"!F*!\"\"F+F+F+F+7)
+F+F+!\"#F+F*\"\"\"\"\"#7)F.F+F/#F.F/F*F1F/7)#F+F/F3#!\"%\"\"$#F+\"\"'F
+*#F.F8#\"\"%F67)F9F7#F/F6#F.\"#CF*F>F=7)#F+F?FA#F5\"#:#F+\"$?\"F*#F.FE
+#F;FC7)FFFD#F;\"#X#F.\"$?(F*FKFI" }}}{EXCHG {PARA 206 "> " 0 "" 
+{MPLTEXT 1 210 31 "b := vector(ordem-1,0):b[2]:=1:" }{MPLTEXT 1 210 0 
+"" }}}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 25 "r := linsolve(A, b
+, 'r');" }{MPLTEXT 1 210 0 "" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"rG
+-%'vectorG6#7)#\"\"\"\"\"$F)#!\"\"\"#O#!\"(\"\"*\"\"!#\"\"(F1#F*F." }}
+}{EXCHG {PARA 206 "> " 0 "" {MPLTEXT 1 210 19 "app_lhs := df[i]:  " }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 14 "\napp_rhs := 0:" }{MPLTEXT 1 
+210 14 "\nerro_1  := 0:" }{MPLTEXT 1 210 43 "\nfor jj from 1 by 1 to t
+runc(st_lhs/2) do  " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 58 "\n  app_
+lhs := app_lhs +r[jj]*df[i+jj-1-trunc(st_lhs/2)];  " }{MPLTEXT 1 210 
+21 "\n  erro_1  := erro_1 " }{MPLTEXT 1 210 68 "-(jj-trunc(st_lhs/2)-1
+)^(ordem-1)/(ordem-2)!*h^(ordem-2)*f^(ordem-1)" }{MPLTEXT 1 210 1 ";" 
+}{MPLTEXT 1 210 8 "\nend do:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 53 
+"\nfor jj from trunc(st_lhs/2)+1 by 1 to st_lhs-1 do   " }{MPLTEXT 1 
+210 0 "" }{MPLTEXT 1 210 54 "\n  app_lhs := app_lhs +r[jj]*df[i+jj-tru
+nc(st_lhs/2)];" }{MPLTEXT 1 210 88 "\n  erro_1  := erro_1 +(jj-trunc(s
+t_lhs/2))^(ordem-1)/(ordem-2)!*h^(ordem-2)*f^(ordem-1);" }{MPLTEXT 1 
+210 2 "  " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 8 "\nend do:" }
+{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 40 "\nfor jj from st_lhs by 1 to o
+rdem-1 do  " }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 71 "\n  app_rhs := a
+pp_rhs+r[jj]/h*f[i+jj-1-round(ordem/2.0)+adjust+center]:" }{MPLTEXT 1 
+210 0 "" }{MPLTEXT 1 210 8 "\nend do:" }{MPLTEXT 1 210 0 "" }{MPLTEXT 
+1 210 17 "\napp_lhs=app_rhs;" }{MPLTEXT 1 210 0 "" }{MPLTEXT 1 210 8 "
+\nerro_1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#/,(&%#dfG6#%\"iG\"\"\"*&#
+F)\"\"$F)&F&6#,&F(F)F)!\"\"F)F)*&F+F)&F&6#,&F(F)F)F)F)F),**&%\"hGF0&%
+\"fG6#,&F(F)\"\"#F0F)#F0\"#O*&#\"\"(\"\"*F)*&F7F0&F9F.F)F)F0*(#FAFBF)F
+7F0&F9F3F)F)*(#F)F>F)F7F0&F96#,&F(F)F<F)F)F)" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#,$*&)%\"hG\"\"'\"\"\")%\"fG\"\"(F(#F(\"$g$" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{PARA 205 "" 0 "" {TEXT 209 0 
+"" }}{PARA 213 "" 0 "" {TEXT 216 0 "" }}{PARA 214 "" 0 "" {TEXT -1 0 "
+" }}}{MARK "7 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 
+0 1 2 33 1 1 }

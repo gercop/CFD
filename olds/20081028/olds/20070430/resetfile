@@ -1,0 +1,12 @@
+cd visual
+rm -f dat2plt
+rm -r -f *~*
+rm -r -f *f_*
+rm -r -f *INIT*
+rm -r -f *.dat
+rm -r -f *.plt
+rm -r -f *.phy
+rm -r -f *.cd
+rm -r -f *.s4
+rm -r -f *.s8
+cd ..

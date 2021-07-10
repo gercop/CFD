@@ -1,0 +1,4 @@
+./resetdir; ./resetfile;
+make grid; mpirun C prg;
+make shear; time mpirun C prg %U;
+./resetdir;

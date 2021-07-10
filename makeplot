@@ -1,0 +1,2 @@
+ls visual; ./resetdir; make afterpro; ./prg; ./resetdir;
+

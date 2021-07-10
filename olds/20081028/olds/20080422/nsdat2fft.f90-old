@@ -1,0 +1,382 @@
+cccccc *******************************************************************
+cccccc Doctorate Project.: Numerical simulation of the transition for 
+cccccc                     turbulence in a compressible boundary layer
+cccccc                     on a plane plate.
+cccccc Programmer\Guide  : Ricardo Alberto Coppola Germanos
+cccccc Programmer\Guiding: Marcello A. Faraco de Medeiros
+cccccc Update............: 16/11/2007
+cccccc Version...........: 1.2
+cccccc *******************************************************************
+cccccc This program carried out Fourier Spectral Analysis.
+cccccc *******************************************************************
+      MODULE sndat2fft
+
+      contains
+ccccc **********************************************************************
+ccccc dat2fft: Main subroutine.
+ccccc **********************************************************************
+      SUBROUTINE dat2fft(t_ini,t_end,fname,N)
+
+      IMPLICIT NONE
+      INCLUDE 'nspar.f90'
+
+      character*5 fname
+      character*20 fname_aux
+      character*17 fname_time
+      integer i,tt,tt_local,t_ini,t_end,N,error
+      real*8 x(imax),y(jmax),z(kmax),data(2*N),
+     &  freq_x(N/2),pwr_sp(N/2,qtimes),
+     &  par_r(N/2,qtimes),par_i(N/2,qtimes),
+     &  rho(imax,jmax,kmax),u  (imax,jmax,kmax),
+     &  v  (imax,jmax,kmax),w  (imax,jmax,kmax),
+     &  Et (imax,jmax,kmax),p  (imax,jmax,kmax),
+     &  tp (imax,jmax,kmax),wx (imax,jmax,kmax),
+     &  wy (imax,jmax,kmax),wz (imax,jmax,kmax),
+     &  U1 (imax,jmax,kmax),U2 (imax,jmax,kmax),
+     &  U3 (imax,jmax,kmax),U4 (imax,jmax,kmax),
+     &  U5 (imax,jmax,kmax)
+
+      write(*,*) ' _______________________________________________'
+      write(*,*) 
+      write(*,*) ' EXECUTANDO ANÁLISE DE FOURIER...               '   
+      write(*,*)      
+
+      tt_local = 0
+      do tt=t_ini,t_end
+        if (mod(tt,qtimes).EQ.0) then
+          call get_filename(tt,'SN__S','.dat',fname_aux)           
+  
+          !MS$IF (tp_dim.EQ.1)
+            call read_BIN_1D(dirgraf,fname_aux,U1,U2,U5,error)
+          !MS$ELSEIF (tp_dim.EQ.2)
+            call read_BIN_2D(dirgraf,fname_aux,U1,U2,U3,U5,error)
+          !MS$ELSEIF (tp_dim.EQ.3)
+            call read_BIN_3D(dirgraf,fname_aux,U1,U2,U3,U4,U5,error)
+          !MS$ENDIF
+
+          call flux_to_primitive(U1,U2,U3,U4,U5,rho,u,v,w,Et,p,tp)
+          !MS$IF (tp_s.EQ.5).OR.(tp_s.EQ.6)
+            call windowing(x,v)
+          !MS$ENDIF 
+
+          if (fname.EQ.'SN_Fx') then
+            do i=1,N-1
+              data(i*2-1) = v(i,jmax/2+1,1)
+              data(i*2  ) = 0.d0
+            end do	
+          elseif (fname.EQ.'SN_Fz') then
+            do i=1,N-1
+              data(i*2-1) = v(1,jmax/2+1,i)
+              data(i*2  ) = 0.d0
+            end do	
+          end if
+
+          tt_local = tt_local + 1
+          call fourier(tt_local,N,data,freq_x,par_r,par_i,pwr_sp) 
+
+          if (error.EQ.0) then
+            call get_filename(tt,fname,'.plt',fname_aux)
+            !MS$IF (tp_dim.EQ.1)
+              call write_FFT_TCP_1D(tt_local,N,fname_aux,freq_x,par_r,par_i,pwr_sp)
+            !MS$ELSEIF (tp_dim.EQ.2)
+              call write_FFT_TCP_2D(tt_local,N,fname_aux,freq_x,par_r,par_i,pwr_sp)
+            !MS$ELSEIF (tp_dim.EQ.3)
+              call write_FFT_TCP_2D(tt_local,N,fname_aux,freq_x,par_r,par_i,pwr_sp)
+            !MS$ENDIF
+          end if    
+        end if
+      end do
+
+      fname_time = fname//'_IN_TIME.plt'
+      call write_FFT_t(t_ini,t_end,((t_end-t_ini)/qtimes+1),N,
+     &  fname_time,freq_x,par_r,par_i,pwr_sp)
+
+      END SUBROUTINE dat2fft
+
+ccccc **********************************************************************
+ccccc windowing: 
+ccccc **********************************************************************
+      SUBROUTINE windowing(x,par)
+
+      IMPLICIT NONE
+      INCLUDE 'nspar.f90'
+
+      integer i,j,k
+      real*8 x(imax),par(imax,jmax,kmax),fc,wp,x0,x1
+      parameter (wp=1.d0)
+ 
+      x0 = x(1+5)
+      x1 = x(imax-5)
+
+      do i=1,imax
+        do j=1,jmax
+          do k=1,kmax
+            fc         = (tanh(wp*(x(i)-x0))+tanh(wp*(x1-x(i))))/2.d0
+            par(i,j,k) = par(i,j,k)*fc
+          end do	
+        end do	
+      end do	
+
+
+      RETURN
+      END SUBROUTINE windowing
+
+ccccc **********************************************************************
+ccccc fourier: This routine calculate the Fourier coefficients.
+ccccc **********************************************************************
+      SUBROUTINE fourier(tt,N,data,freq_x,par_r,par_i,pwr_sp)
+
+      IMPLICIT NONE
+      INCLUDE 'nspar.f90'
+
+      integer i,tt,N            
+      real*8 data(N*2),freq_x(N/2),
+     &  par_r(N/2,qtimes),par_i(N/2,qtimes),pwr_sp(N/2,qtimes)
+
+      call DFT(data,N-1,1)
+
+      do i=1,N/2
+        freq_x(i   ) = dble(i-1)
+	par_r (i,tt) = data(i*2-1)
+	par_i (i,tt) = data(i*2  )
+	pwr_sp(i,tt) = Ma*c/(alpha/(2.d0*Pi/Lx))*(1.d0/dble(N-1)*
+     &    dsqrt(par_r(i,tt)**2.d0+par_i(i,tt)**2.d0))
+      end do
+
+      RETURN
+      END SUBROUTINE fourier
+
+ccccc **********************************************************************
+ccccc write_FFT_TCP_2D: Write data in file *.dat for TECPLOT.
+ccccc **********************************************************************
+      SUBROUTINE write_FFT_TCP_2D(tt,N,fname,freq_x,par_r,par_i,pwr_sp)
+
+      IMPLICIT NONE
+      INCLUDE 'nspar.f90'
+
+      character*20 fname
+      character*1 NULLCHR
+      integer i,tt,N,size,Debug,IORE,TecIni,
+     &  TecDat,TecZne,TecEnd,VIsPrecis
+      real*8 
+     &  freq_x  (N/2       ),par_r   (N/2,qtimes),
+     &  par_i   (N/2,qtimes),pwr_sp  (N/2,qtimes)
+      real*4 
+     &  freq_x_4(N/2       ),par_r_4 (N/2       ),
+     &  par_i_4 (N/2       ),pwr_sp_4(N/2       )
+
+      NULLCHR   = CHAR(0)
+      Debug     = 0
+      VIsPrecis = 0
+  
+      IORE = TecIni('SIMPLE DATASET'//NULLCHR,
+     &  'f v_r v_i pwr_sp'//NULLCHR,
+     &  dirgraf//'f_'//fname//NULLCHR,
+     &  '.'//NULLCHR,Debug,VIsPrecis)
+
+      IORE = TecZne('Simple Zone'//NULLCHR,
+     &  N/2,1,1,'BLOCK'//NULLCHR,NULLCHR)
+
+      size = dble(N/2)
+
+      do i=1,N/2
+        freq_x_4(i) = freq_x(i   )
+        par_r_4 (i) = par_r (i,tt)
+        par_i_4 (i) = par_i (i,tt)
+        pwr_sp_4(i) = pwr_sp(i,tt)
+      end do
+
+      IORE = TecDat(size,freq_x_4,VIsPrecis)
+      IORE = TecDat(size,par_r_4 ,VIsPrecis)
+      IORE = TecDat(size,par_i_4 ,VIsPrecis)
+      IORE = TecDat(size,pwr_sp_4,VIsPrecis)
+      IORE = TecEnd()
+
+      write(*,*) ' WRITE DATA IN FILE: ',dirgraf//'f_'//fname
+      write(*,*)
+        
+      RETURN
+      END SUBROUTINE write_FFT_TCP_2D
+
+ccccc **********************************************************************
+ccccc write_FFT_t: Write data for FFT modes in time.
+ccccc **********************************************************************
+      SUBROUTINE write_FFT_t(t_ini,t_end,qtimes_local,N,fname,
+     &  freq_x,par_r,par_i,pwr_sp)
+
+      IMPLICIT NONE
+      INCLUDE 'nspar.f90'
+
+      character*17 fname
+      character*1 NULLCHR
+      integer i,tt,tt_local,qtimes_local,N,t_ini,t_end,size,
+     &  Debug,IORE,TecIni,TecZne,TecDat,TecEnd,VIsPrecis
+      real*8 
+     &  freq_x  (N/2             ),par_r   (N/2,qtimes_local),
+     &  par_i   (N/2,qtimes_local),pwr_sp  (N/2,qtimes_local)
+      real*4 
+     &  time_4  (qtimes_local    ),par_r_4 (qtimes_local    ),
+     &  par_i_4 (qtimes_local    ),pwr_sp_4(qtimes_local    )
+
+      NULLCHR      = CHAR(0)
+      Debug        = 0
+      VIsPrecis    = 0  
+      
+      IORE = TecIni('SIMPLE DATASET'//NULLCHR,'time m0 m1 m2 m3 m4 m5 m6 m7 m8 m9 m10 m11 m12 m13 m14 m15 m16',
+     &  dirgraf//'f_'//fname//NULLCHR,'.'//NULLCHR,Debug,VIsPrecis)
+      IORE = TecZne('Simple Zone'//NULLCHR,qtimes_local,1,1,'BLOCK'//NULLCHR,NULLCHR)
+
+      size = dble(qtimes_local)
+
+      tt_local = 0
+      do tt=t_ini,t_end           
+        if (mod(tt,qtimes).EQ.0) then
+          tt_local = tt_local+1
+          time_4 (tt_local) = dble(tt)*dt
+        end if
+      end do 
+      IORE = TecDat(size,time_4,  VIsPrecis)
+
+      do i=1,(16+1)
+
+        tt_local = 0
+        do tt=t_ini,t_end           
+          if (mod(tt,qtimes).EQ.0) then
+            tt_local = tt_local+1
+            par_r_4 (tt_local) = par_r (i,tt_local)
+            par_i_4 (tt_local) = par_i (i,tt_local)
+            pwr_sp_4(tt_local) = pwr_sp(i,tt_local)
+          end if
+        end do 
+
+        IORE = TecDat(size,pwr_sp_4,VIsPrecis)
+      end do
+      IORE = TecEnd()
+
+      write(*,*) ' WRITE DATA IN FILE: ',dirgraf//'f_'//fname
+      write(*,*)
+       
+      RETURN
+      END SUBROUTINE write_FFT_t
+
+ccccc **********************************************************************
+ccccc FFT: This routine carried out the Fourier Transform.
+ccccc **********************************************************************
+      SUBROUTINE FFT(data,nn,isign)
+
+      integer isign,nn
+      real*8 data(2*nn)
+        ! Replaces data(1:2*nn) by its discrete Fourier transform, if isign 
+        ! is input as 1; or replaces data(1:2*nn) by nn times its inverse 
+        ! discrete Fourier transform, if isign is input as -1. Data is a 
+        ! complex array of length nn or, equivalently, a real array of 
+        ! length 2*nn. nn MUST be an integer power of 2 (this is not checked for!).
+      integer i,istep,j,m,mmax,n
+      real*8 tempi,tempr      
+      real*8 theta,wi,wpi,wpr,wr,wtemp 
+        !Double precision for the trigonometric recurrences. 
+
+      n = 2*nn
+      j = 1
+      do i=1,n,2 !This is the bit-reversal section of the routine.
+        if(j.gt.i)then
+          tempr     = data(j) !Exchange the two complex numbers.
+          tempi     = data(j+1)
+          data(j)   = data(i)
+          data(j+1) = data(i+1)
+          data(i)   = tempr
+          data(i+1) = tempi
+        end if
+        m = nn
+    1   if ((m.ge.2).and.(j.gt.m)) then
+          j = j-m
+          m = m/2
+          goto 1
+        endif
+        j = j+m
+      end do 
+      mmax = 2 !Here begins the Danielson-Lanczos section of the routine.
+    2 if (n.gt.mmax) then !then Outer loop executed log2 nn times.
+        istep = 2*mmax
+        theta = 6.28318530717959d0/(isign*mmax) !Initialize for the trigonometric recurrence.
+        wpr   = -2.d0*dsin(0.5d0*theta)**2.d0
+        wpi   = dsin(theta)
+        wr    = 1.d0
+        wi    = 0.d0
+        do m=1,mmax,2 !Here are the two nested inner loops.
+          do i=m,n,istep
+            j = i+mmax !This is the Danielson-Lanczos formula:
+            tempr     = sngl(wr)*data(j)-sngl(wi)*data(j+1)
+            tempi     = sngl(wr)*data(j+1)+sngl(wi)*data(j)
+            data(j)   = data(i)-tempr
+            data(j+1) = data(i+1)-tempi
+            data(i)   = data(i)+tempr
+            data(i+1) = data(i+1)+tempi
+          end do 
+          wtemp = wr 
+          wr    = wr*wpr-wi*wpi+wr
+          wi    = wi*wpr+wtemp*wpi+wi
+        end do 
+        mmax = istep
+        goto 2 
+      end if 
+      
+      RETURN
+      END SUBROUTINE FFT
+
+ccccc **********************************************************************
+ccccc DFT: This routine carried out the Fourier Transform.
+ccccc **********************************************************************
+      SUBROUTINE DFT(data,nn,isign)
+
+      integer isign,nn
+      real*8 data(2*nn),dataaux(2*nn)
+        ! Replaces data(1:2*nn) by its discrete Fourier transform, if isign
+        ! is input as 1; or replaces data(1:2*nn) by nn times its inverse
+        ! discrete Fourier transform, if isign is input as -1. Data is a
+        ! complex array of length nn or, equivalently, a real array of
+        ! length 2*nn.
+      integer i,n
+      real*8 tempi,tempr     
+      real*8 wi,wr
+      complex*16 w
+      real*8 Pi
+
+      Pi= 2.d0*dasin(1.d0)
+      if (isign.eq.1) then ! Discrete fourier transform
+      w = cmplx(dcos(2.d0*Pi/DBLE(nn)),dsin(2.d0*Pi/DBLE(nn)))
+      do n=-nn/2,nn/2-1,1
+        tempr = 0.d0
+        tempi = 0.d0
+        do k=0,nn-1
+          wr = dreal(w**(DBLE(n)*DBLE(k)))
+          wi = dimag(w**(DBLE(n)*DBLE(k)))
+          tempr=tempr+data((k+1)*2-1)*wr-data((k+1)*2)*wi
+          tempi=tempi+data((k+1)*2-1)*wi+data((k+1)*2)*wr
+        enddo
+        dataaux(2*(n+nn/2)+1)=tempr
+        dataaux(2*(n+nn/2)+2)=tempi
+      enddo
+      n=0
+      data(1)=dataaux(2*(n+nn/2)+1)
+      data(2)=dataaux(2*(n+nn/2)+2)
+      do n=1,nn/2-1,1
+        data(2*n+1)=dataaux(2*(n+nn/2)+1)
+        data(2*n+2)=dataaux(2*(n+nn/2)+2)
+      enddo
+      do n=-nn/2,-1,1
+        data(2*(n+nn/2)+nn+1)=dataaux(2*(n+nn/2)+1)
+        data(2*(n+nn/2)+nn+2)=dataaux(2*(n+nn/2)+2)
+      enddo
+      elseif (isign.eq.-1) then ! Inverse discrete fourier transform
+        write(*,*)"The procedure for inverse Discrete Fourier",
+     &            "Transform is not yet implemented!"
+        write(*,*)"Press <ENTER>"
+        read(*,*)
+        STOP
+      end if
+           
+      RETURN
+      END SUBROUTINE DFT
+
+      END MODULE sndat2fft

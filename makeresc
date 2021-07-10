@@ -1,0 +1,4 @@
+./resetdir; 
+make grid; mpirun C prg;
+make shear; mpirun C prg;
+./resetdir;

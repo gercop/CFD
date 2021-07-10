@@ -1,0 +1,58 @@
+*******************************************
+Programa SNTTCL 3D Versão 3.3
+*******************************************
+
+  O objetivo desta versão é simular o problema de camada cisalhante livre. Esta versão tem
+como objetivo principal alterar o código conforme a orientação do Prof. Fasel.
+As alterações são: implementar stretching na direção x e y; implementar condição
+de entrada e de saída no domínio computacional;
+  Juntamente com o resumo, temos a descrição das implementações e alterações realizadas
+no código fonte e nas rotinas de visualização:
+
+HIPÓTESES DA SOLUÇÃO ANALÍTICA:
+  Acoustic Waves Problems:
+    Solução viscosa tridimensional.
+    Equações adimensionalizadas.
+    Equações linearizadas.
+    Escoamento decomposto em um parte média e uma perturbação.
+HIPÓTESES DA SOLUÇÃO NUMÉRICA:
+  Simulação tridimensional.
+  Equações adimensionalizadas.
+  Escoamento viscoso.
+  Escoamento decomposto em uma parte média e perturbação.
+  Formulação conservativa com algumas equações expandidas para 
+  trabalhar com a condição de contorno do tipo Free-Slip.
+MÉTODO NUMÉRICO ADOTADO:
+  Método das Diferenças Finitas Compactas de 6a ordem na direçõo x, y e z.
+  Runge-Kutta de 4a ordem para a integração no tempo.
+  Filtro numérico de 4a ordem.
+CONDIÇÃO INICIAL ADOTADA:
+  Acoustic Waves Problems:
+    Solução Analítica do problema de ondas acústicas.
+  Free Shear Layer Problem:
+    Perfil de velocidade tangente hiperbólico.
+    Escoamento incompressível.
+CONDIÇÃO DE CONTORNO:
+  Acoustic Waves Problems:
+    Periódica em todas as direções.
+  Free Shear Layer Problem - Desenvolvimento temporal:
+    Periódica na direção x.
+    Free-Slip na direção y.
+    Periódica na direção z.
+  Free Shear Layer Problem - Desenvolvimento espacial:
+    Não-periódica na direção x.
+    Free-Slip na direção y.
+    Periódica na direção z.
+
+PROGRAMA SNTTCL.F (FORTRAN):
+---------------------------
+
+  Correção dos perfis de velocidade;
+
+  Correção da condição CFL;
+ 
+  Implementação do stretching na direcao x e y;
+
+  Implementação da condição de entrada e de saída;
+
+ 

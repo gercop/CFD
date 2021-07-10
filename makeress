@@ -1,0 +1,4 @@
+./resetdir; 
+make grid; ./prg;
+make shear; ./prg;
+./resetdir;

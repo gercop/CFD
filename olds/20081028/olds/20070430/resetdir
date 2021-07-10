@@ -1,0 +1,14 @@
+rm -r -f *CORE*
+rm -r -f *core*
+
+rm -r -f *~*
+rm -r -f *.o
+rm -r -f *.mod
+rm -r -f *.out
+rm -r -f prg*
+rm -r -f *.mdp
+rm -r -f *.mak
+rm -r -f *.obj
+rm -r -f *.pdb
+rm -r -f *.phy
+
